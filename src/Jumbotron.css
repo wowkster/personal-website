@@ -1,0 +1,68 @@
+.jumbotron {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15vw;
+    margin-top: 10vh;
+}
+
+.jumbotron > * {
+    opacity: 0;
+    animation: slideFromLeft 400ms ease forwards;
+}
+
+.jumbotron > *:nth-child(1) {animation-delay: 500ms;}
+.jumbotron > *:nth-child(2) {animation-delay: 600ms;}
+.jumbotron > *:nth-child(3) {animation-delay: 700ms;}
+.jumbotron > *:nth-child(4) {animation-delay: 800ms;}
+
+.jumbotron .badge {
+    background: var(--accent);
+    width: fit-content;
+    padding: 0 12px;
+    border-radius: 3px;
+    color: var(--textPrimary);
+    font-weight: 300;
+    font-size: small;
+}
+
+.jumbotron h1 {
+    color: var(--textPrimary);
+    font-family: 'Space Mono', 'Cascadia Mono', monospace;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2.4rem;
+    line-height: 4.5rem;
+    letter-spacing: 0.045em;
+    margin: 0;
+}
+
+.jumbotron h3 {
+    color: var(--textSecondary);
+    font-style: normal;
+    font-weight: lighter;
+    font-size: medium;
+}
+
+.jumbotron a {
+    display: block;
+    color: var(--accent);
+    font-style: normal;
+    font-weight: lighter;
+    font-size: medium;
+    width: fit-content;
+}
+
+.jumbotron a:hover {
+    color: var(--accentLighter);
+}
+
+@keyframes slideFromLeft {
+    from {
+        transform: translateX(-40px); 
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

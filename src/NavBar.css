@@ -1,0 +1,127 @@
+.nav-bar {
+    background: var(--primary);
+    color: var(--textPrimary );
+
+    height: 110px;
+
+    display: grid;
+    align-items: center;
+    grid-template-columns: 0.6fr 0.9fr 3fr 1fr 0.2fr;
+}
+
+.nav-bar span {
+    font-size: x-large;
+    font-weight: 100;
+    font-style: normal;
+    animation: slideFromTop 400ms ease forwards;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.nav-bar li {
+    font-size: large;
+    position: relative;
+    transition: color 0.2s;
+    opacity: 0;
+    animation: slideFromTop 400ms ease forwards;
+}
+
+.nav-list li:nth-child(1) {animation-delay: 100ms;}
+.nav-list li:nth-child(2) {animation-delay: 200ms;}
+.nav-list li:nth-child(3) {animation-delay: 300ms;}
+.nav-list li:nth-child(4) {animation-delay: 400ms;}
+
+.nav-bar li:not(:first-child) {
+    margin-left: 35px;
+}
+
+.nav-bar a {
+    color: var(--textPrimary);
+    text-decoration: none;    
+}
+
+.nav-list a:hover, .nav-bar li.active > a {
+    color: var(--accent);
+}
+
+.nav-list a::after {
+    background-color: var(--accent);
+    width: 0;
+    opacity: 0;
+    content: '';
+    height: 2px;
+    left: 0;
+    position: absolute;
+    transition: width 0.2s, opacity 0.2s;
+}
+
+.nav-list a:hover::after {
+    width: 100%;
+    opacity: 1;
+}
+
+.right-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.github-icon {
+    font-size: 32px;
+    margin-right: 10px;
+    margin-top: -4px;
+}
+
+.github-link {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    opacity: 0;
+    animation: slideFromTop 400ms ease forwards 500ms;
+}
+
+.github-link:hover {
+    color: var(--accent)
+}
+
+.email-icon {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.email-icon-button {
+    color: var(--accent) !important;
+    background: var(--primaryLighter);
+    width: 30px;
+    height: 30px;
+    padding: 15px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 22px;
+    opacity: 0;
+    animation: slideFromTop 400ms ease forwards 600ms;
+}
+
+.email-icon-button:hover {
+    background: var(--primaryEvenLighter);
+}
+
+@keyframes slideFromTop {
+    from {
+        -webkit-transform: translateY(-40px); 
+        transform: translateY(-40px); 
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
